@@ -17,18 +17,20 @@
   <title>Cafe</title>
 </head>
 
-<body>
-  <!--nav bar start-->
-  <nav class="navbar navbar-expand-lg navbar-dark " style="background-color: #563d7c;">
-    <a class="navbar-brand" href="/index.jsp">Home</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
-      aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
 <%
 	String uri = request.getRequestURI();
 String contextPath = request.getContextPath();
 %>
+
+<body>
+  <!--nav bar start-->
+  <nav class="navbar navbar-expand-lg navbar-dark " style="background-color: #563d7c;">
+    <a class="navbar-brand" href="<%=contextPath %>/index.jsp">Home</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+      aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
     <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
       <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
         <li class="nav-item <%if(uri.startsWith("/dept")){ %> active<%} %>">
@@ -50,14 +52,12 @@ String contextPath = request.getContextPath();
           <a class="nav-link" href="<%=contextPath %>/member/list.jsp">회원관리</a>
         </li>
         <li class="nav-item <%if(uri.startsWith("/file")){ %> active<%} %>">
-          <a class="nav-link" href="<%=contextPath %>/file/index.jsp">파일업로드</a>
+          <a class="nav-link" href="<%=contextPath %>/apply.jsp">어플라이</a>
         </li>
       </ul>
       <ul class="navbar-nav">
       
-       <% MemDto mdto = 
-       (MemDto)
-       session.getAttribute("member");
+       <% MemDto mdto = (MemDto)session.getAttribute("member");
       if(mdto == null){
     	  
       %>

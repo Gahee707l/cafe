@@ -6,7 +6,6 @@ if(mdto!=null){
 	response.sendRedirect("/index.jsp");
 	return;
 }
-
 %>
 <nav aria-label="breadcrumb">
 	<ol class="breadcrumb">
