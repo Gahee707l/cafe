@@ -85,12 +85,14 @@
 			<%for (ApplyDto appdto : list){%>
 		<div class="d-flex w-100 justify-content-between">
 					<small id = "Ano" class = "<%=appdto.getNo()%>" ><%=appdto.getNo()%></small>
+						<div class="text-right">
 					<%if(mdto!=null && mdto.getId().equals(appdto.getId())) { %>
 					<button type="button" class="btn btn-primary" name="delcmm" id= "<%=appdto.getNo()%>" name = "delcmm" > 삭제 </button>
 					<% }%>
 					<button type="button" class="btn btn-primary" name="thmup" id= "<%=appdto.getNo()%>" name = "thmup" > Up
 						<span class="badge badge-light" ><%=appdto.getThmup()%></span>
 					</button>
+						</div>
 		</div>
 				 <p id="comm"><%=appdto.getCmm()%></p>
 				 <small>작성자 : <%=appdto.getId()%></small>
